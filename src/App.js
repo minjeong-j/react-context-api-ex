@@ -1,24 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+// src/App.js
+import React from 'react';
+import UserProvider from './context/UserProvider';
+import ThemeProvider from './context/ThemeProvider';
+import UserProfile from './components/UserProfile';
+import ThemeToggler from './components/ThemeToggler';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <UserProvider>
+      <ThemeProvider>
+        <div style={{ textAlign: 'center', marginTop: '50px' }}>
+          <UserProfile />
+          <ThemeToggler />
+        </div>
+      </ThemeProvider>
+    </UserProvider>
   );
 }
 
